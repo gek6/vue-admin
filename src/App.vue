@@ -1,7 +1,11 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" :clipped="true" app :permanent="true">
+      
       <v-list>
+
+       <v-list-item-group v-model="item" color="primary">
+
         <v-list-item link="/" @click="jump">
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
@@ -10,6 +14,7 @@
             <v-list-item-title>栏目管理</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        
         <v-list-item link="/articles">
           <v-list-item-action>
             <v-icon>mdi-contact-mail</v-icon>
@@ -18,7 +23,18 @@
             <v-list-item-title>文章管理</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+         <v-list-item link="/articles">
+          <v-list-item-action>
+            <v-icon>mdi-contact-mail</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>添加文章</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        </v-list-item-group>
+
       </v-list>
+
     </v-navigation-drawer>
 
     <v-app-bar app color="indigo" dark :clipped-left="true">
@@ -46,7 +62,8 @@ export default {
     source: String
   },
   data: () => ({
-    drawer: null
+    drawer: null,
+    item:''
   }),
   methods:{
     jump(){

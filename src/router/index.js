@@ -15,6 +15,11 @@ const routes = [
     name: "articleList",
     component: import("../views/article/List.vue")
   },
+  {
+    path: "/articles/add",
+    name: "articleList-add",
+    component: import("../views/article/Add.vue")
+  },
   // {
   //   path: "/about",
   //   name: "about",
